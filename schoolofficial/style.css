@@ -1,0 +1,755 @@
+        /* Galaxy Theme Styles */
+        :root {
+            --galaxy-purple: #4A148C;
+            --galaxy-dark: #0F0526;
+            --galaxy-gold: #FFD700;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bg-galaxy {
+            background: linear-gradient(to right, var(--galaxy-dark), var(--galaxy-purple));
+        }
+
+        .btn-gold {
+            background-color: var(--galaxy-gold);
+            color: var(--galaxy-dark);
+            font-weight: bold;
+            border: none;
+            padding: 10px 25px;
+        }
+
+        .btn-gold:hover {
+            background-color: #e6c200;
+            color: var(--galaxy-dark);
+        }
+
+        .school-logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .hero-section .carousel-caption {
+            background: rgba(15, 5, 38, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            bottom: 100px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .schedule-calendar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .schedule-calendar .day {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--galaxy-dark);
+            border: 3px solid var(--galaxy-purple);
+            font-size: 1.2rem;
+        }
+
+        .schedule-calendar .music-day {
+            background: var(--galaxy-purple);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s;
+            border-top: 5px solid var(--galaxy-purple);
+            margin-bottom: 20px;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .program-icon {
+            font-size: 2.5rem;
+            color: var(--galaxy-purple);
+            margin-bottom: 15px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            color: var(--galaxy-gold);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            color: var(--galaxy-purple);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--galaxy-gold);
+        }
+
+        footer {
+            background: var(--galaxy-dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-links h5 {
+            color: var(--galaxy-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--galaxy-gold);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .social-icons a:hover {
+            color: var(--galaxy-gold);
+        }
+
+        /* Animation classes */
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section .carousel-caption {
+                bottom: 20px;
+                padding: 15px;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .schedule-calendar {
+                flex-wrap: wrap;
+            }
+
+            .schedule-calendar .day {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            } }
+            /* Galaxy Carousel Styles */
+.galaxy-carousel {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+  }
+  
+  .galaxy-carousel .carousel-inner,
+  .galaxy-carousel .carousel-item {
+    height: 100%;
+  }
+  
+  .galaxy-carousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  /* Starry Background */
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 0;
+  }
+  
+  .stars:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s infinite;
+    opacity: 0.7;
+  }
+  
+  .stars.small:before {
+    background-image: 
+      radial-gradient(1px 1px at 50px 100px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 90px 60px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 140px 30px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 180px 90px, #fff, rgba(0,0,0,0));
+    background-size: 200px 200px;
+    animation: twinkle 7s infinite;
+    animation-delay: 1s;
+  }
+  
+  .stars.tiny:before {
+    background-image: 
+      radial-gradient(0.5px 0.5px at 30px 150px, #fff, rgba(0,0,0,0)),
+      radial-gradient(0.5px 0.5px at 80px 10px, #fff, rgba(0,0,0,0)),
+      radial-gradient(0.5px 0.5px at 120px 60px, #fff, rgba(0,0,0,0));
+    background-size: 200px 200px;
+    animation: twinkle 9s infinite;
+    animation-delay: 2s;
+  }
+  
+  @keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.3; }
+  }
+  
+  /* Caption Styles */
+  .galaxy-carousel .carousel-caption {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(15, 5, 38, 0.4);
+    z-index: 1;
+  }
+  
+  .caption-wrapper {
+    max-width: 800px;
+    padding: 30px;
+    background: rgba(15, 5, 38, 0.7);
+    border-radius: 15px;
+    border: 1px solid var(--galaxy-gold);
+  }
+  
+  .caption-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--galaxy-gold);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  }
+  
+  .caption-subtitle {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  /* Button Glow Effect */
+  .btn-glow {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .btn-glow .btn-gold {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .btn-glow:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: var(--galaxy-gold);
+    border-radius: 50px;
+    z-index: 0;
+    opacity: 0.5;
+    animation: pulseGlow 2s infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.5; }
+  }
+  
+  /* Carousel Indicators */
+  .galaxy-carousel .carousel-indicators {
+    bottom: 30px;
+    z-index: 2;
+  }
+  
+  .galaxy-carousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+    margin: 0 8px;
+    transition: all 0.3s;
+  }
+  
+  .galaxy-carousel .carousel-indicators button.active {
+    background-color: var(--galaxy-gold);
+    transform: scale(1.3);
+  }
+  
+  /* Carousel Controls */
+  .galaxy-carousel .carousel-control-prev,
+  .galaxy-carousel .carousel-control-next {
+    width: 60px;
+    z-index: 2;
+  }
+  
+  .galaxy-carousel .carousel-control-prev-icon,
+  .galaxy-carousel .carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(74, 20, 140, 0.7);
+    border-radius: 50%;
+    border: 2px solid var(--galaxy-gold);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .caption-title {
+      font-size: 2.5rem;
+    }
+    
+    .caption-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .galaxy-carousel {
+      height: 80vh;
+      min-height: 500px;
+    }
+    
+    .caption-title {
+      font-size: 2rem;
+    }
+    
+    .caption-subtitle {
+      font-size: 1rem;
+    }
+    
+    .caption-wrapper {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .galaxy-carousel {
+      height: 70vh;
+      min-height: 400px;
+    }
+    
+    .caption-title {
+      font-size: 1.5rem;
+    }
+    
+    .btn-glow .btn-gold {
+      padding: 8px 20px;
+      font-size: 0.9rem;
+    }
+  }
+  /* Galaxy Carousel Styles */
+  .galaxy-carousel {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      min-height: 600px;
+      max-height: 800px;
+  }
+
+  .galaxy-carousel .carousel-inner,
+  .galaxy-carousel .carousel-item {
+      height: 100%;
+  }
+
+  .galaxy-carousel .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+  }
+
+  /* Starry Background */
+  .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      z-index: 0;
+  }
+
+  .stars:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+          radial-gradient(2px 2px at 20px 30px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 160px 120px, #fff, rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: twinkle 5s infinite;
+      opacity: 0.7;
+  }
+
+  .stars.small:before {
+      background-image:
+          radial-gradient(1px 1px at 50px 100px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 90px 60px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 140px 30px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 180px 90px, #fff, rgba(0, 0, 0, 0));
+      background-size: 200px 200px;
+      animation: twinkle 7s infinite;
+      animation-delay: 1s;
+  }
+
+  .stars.tiny:before {
+      background-image:
+          radial-gradient(0.5px 0.5px at 30px 150px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(0.5px 0.5px at 80px 10px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(0.5px 0.5px at 120px 60px, #fff, rgba(0, 0, 0, 0));
+      background-size: 200px 200px;
+      animation: twinkle 9s infinite;
+      animation-delay: 2s;
+  }
+
+  @keyframes twinkle {
+      0% {
+          opacity: 0.3;
+      }
+
+      50% {
+          opacity: 0.8;
+      }
+
+      100% {
+          opacity: 0.3;
+      }
+  }
+
+  /* Caption Styles */
+  .galaxy-carousel .carousel-caption {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(15, 5, 38, 0.4);
+      z-index: 1;
+  }
+
+  .caption-wrapper {
+      max-width: 800px;
+      padding: 30px;
+      background: rgba(15, 5, 38, 0.7);
+      border-radius: 15px;
+      border: 1px solid var(--galaxy-gold);
+  }
+
+  .caption-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--galaxy-gold);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  .caption-subtitle {
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 30px;
+  }
+
+  /* Button Glow Effect */
+  .btn-glow {
+      display: inline-block;
+      position: relative;
+  }
+
+  .btn-glow .btn-gold {
+      position: relative;
+      z-index: 1;
+  }
+
+  .btn-glow:after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: var(--galaxy-gold);
+      border-radius: 50px;
+      z-index: 0;
+      opacity: 0.5;
+      animation: pulseGlow 2s infinite;
+  }
+
+  @keyframes pulseGlow {
+      0% {
+          transform: scale(1);
+          opacity: 0.5;
+      }
+
+      50% {
+          transform: scale(1.05);
+          opacity: 0.8;
+      }
+
+      100% {
+          transform: scale(1);
+          opacity: 0.5;
+      }
+  }
+
+  /* Carousel Indicators */
+  .galaxy-carousel .carousel-indicators {
+      bottom: 30px;
+      z-index: 2;
+  }
+
+  .galaxy-carousel .carousel-indicators button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      margin: 0 8px;
+      transition: all 0.3s;
+  }
+
+  .galaxy-carousel .carousel-indicators button.active {
+      background-color: var(--galaxy-gold);
+      transform: scale(1.3);
+  }
+
+  /* Carousel Controls */
+  .galaxy-carousel .carousel-control-prev,
+  .galaxy-carousel .carousel-control-next {
+      width: 60px;
+      z-index: 2;
+  }
+
+  .galaxy-carousel .carousel-control-prev-icon,
+  .galaxy-carousel .carousel-control-next-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: rgba(74, 20, 140, 0.7);
+      border-radius: 50%;
+      border: 2px solid var(--galaxy-gold);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+      .caption-title {
+          font-size: 2.5rem;
+      }
+
+      .caption-subtitle {
+          font-size: 1.2rem;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .galaxy-carousel {
+          height: 80vh;
+          min-height: 500px;
+      }
+
+      .caption-title {
+          font-size: 2rem;
+      }
+
+      .caption-subtitle {
+          font-size: 1rem;
+      }
+
+      .caption-wrapper {
+          padding: 20px;
+      }
+  }
+
+  @media (max-width: 576px) {
+      .galaxy-carousel {
+          height: 70vh;
+          min-height: 400px;
+      }
+
+      .caption-title {
+          font-size: 1.5rem;
+      }
+
+      .btn-glow .btn-gold {
+          padding: 8px 20px;
+          font-size: 0.9rem;
+      } }
+          .modal-content {
+              border-radius: 20px;
+              overflow: hidden;
+              border: none;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          }
+    
+          .modal-header {
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              color: white;
+              border-bottom: none;
+              padding: 20px;
+          }
+    
+          .modal-body {
+              padding: 30px;
+              text-align: center;
+          }
+    
+          .modal-footer {
+              border-top: none;
+              justify-content: center;
+              padding-bottom: 25px;
+          }
+    
+          .btn-close {
+              filter: invert(1);
+              opacity: 0.8;
+          }
+    
+          .special-btn {
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              border: none;
+              border-radius: 50px;
+              padding: 10px 25px;
+              color: white;
+              font-weight: 600;
+              transition: all 0.3s;
+              box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+          }
+    
+          .special-btn:hover {
+              transform: translateY(-3px);
+              box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+              color: white;
+          }
+    
+          .icon-circle {
+              width: 80px;
+              height: 80px;
+              background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 20px;
+          }
+    
+          .icon-circle i {
+              font-size: 36px;
+              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }
+    
+          .pulse {
+              animation: pulse 2s infinite;
+          }
+    
+          @keyframes pulse {
+              0% {
+                  transform: scale(1);
+              }
+    
+              50% {
+                  transform: scale(1.05);
+              }
+    
+              100% {
+                  transform: scale(1);
+              }
+          }
